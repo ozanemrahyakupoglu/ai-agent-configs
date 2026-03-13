@@ -39,10 +39,10 @@ Talep birden fazla bileşeni etkiliyorsa her bileşen için en az bir Story yaz.
 | Mobile | `[MOB]` |
 
 ### 2. Story Bağımsız Olmalı
-Her Story, diğerlerinden bağımsız olarak test edilebilir ve teslim edilebilir olmalı. Eğer bir Story başka birinin bitmesini bekliyorsa, bunu `Depends on` alanında belirt.
+Her Story, diğerlerinden bağımsız olarak test edilebilir ve teslim edilebilir olmalı. Eğer bir Story başka birinin bitmesini bekliyorsa, bunu `Depends on` alanında belirt. Ayrıca storynin parent alanını ilgili epice bağla
 
 ### 3. Subtask Granülaritesi
-Subtasklar somut teknik adımlar olmalı. "Geliştir" gibi muğlak subtasklar yazma.
+Subtasklar somut teknik adımlar olmalı. "Geliştir" gibi muğlak subtasklar yazma. Eğer storyler altında sub task yazma ihtiyacın varsa. Yazdığın her sub task için jirada subtask kaydı oluştur ve storye bağla
 
 ❌ Kötü: `Login ekranını geliştir`
 
