@@ -51,6 +51,10 @@ Subtasklar somut teknik adımlar olmalı. "Geliştir" gibi muğlak subtasklar ya
 ### 4. Kabul Kriterleri Story Seviyesinde Yaz
 Her Story'nin AC'leri, şablondaki kabul kriterlerinden türetilmeli.
 
+### 5. Subtask Sahipliği
+Her Subtask tek bir bileşene ait olmalı. Eğer bir iş birden fazla 
+bileşeni etkiliyorsa, her bileşen için ayrı Subtask yaz.
+
 ---
 
 ## Çıktı Formatı
@@ -81,6 +85,14 @@ Her Epic/Story/Subtask için aşağıdaki yapıyı kullan:
 #### ✅ Subtask: [Subtask Başlığı]
 - **Açıklama:** [Ne yapılacak]
 - **Tahmini Efor:** [saat veya yarım gün / 1 gün]
+
+---
+
+#### ✅ Subtask: [Subtask Başlığı]
+- **Açıklama:** [Ne yapılacak]
+- **Tahmini Efor:** [saat veya yarım gün / 1 gün]
+- **Bileşen:** [DB | BE | WEB | MOB]
+- **Teknik Notlar:** [varsa önemli teknik detay, yoksa "-"]
 ```
 
 ---
