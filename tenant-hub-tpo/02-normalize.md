@@ -1,8 +1,9 @@
-# Adım 1: Talebi Normalleştir
+# Talebi Normalleştir
 
 ## Görevin
 
-Kullanıcıdan gelen serbest metni analiz et ve aşağıdaki **Standart Talep Şablonu**'na oturtur.
+Kullanıcıdan gelen serbest metni analiz et ve aşağıdaki **Standart Talep Şablonu**'na oturt.
+Eğer gelen metin birden fazla bağımsız talep içeriyorsa, her biri için ayrı şablon oluştur.
 
 ---
 
@@ -17,15 +18,15 @@ Kullanıcıdan gelen serbest metni analiz et ve aşağıdaki **Standart Talep Ş
 - Açıklama: [Ne yapılmak isteniyor, neden isteniyor]
 
 ### Kullanıcı Hikayesi
-As a [kullanıcı rolü],
-I want to [yapmak istediği şey],
-So that [elde etmek istediği fayda].
+Bir [kullanıcı rolü] olarak,
+[yapmak istediği şey] istiyorum,
+böylece [elde etmek istediği fayda].
 
 ### Etkilenen Bileşenler
-- [ ] Database
-- [ ] Backend
-- [ ] Web Frontend
-- [ ] Mobile
+- [ ] `[DB]` Database
+- [ ] `[BE]` Backend
+- [ ] `[WEB]` Web Frontend
+- [ ] `[MOB]` Mobile
 
 ### Kabul Kriterleri
 - [ ] [Kriter 1]
@@ -33,8 +34,8 @@ So that [elde etmek istediği fayda].
 - [ ] [Kriter 3]
 
 ### Öncelik
-- Seviye: [Critical | High | Medium | Low]
-- Gerekçe: [Neden bu öncelik?]
+- Seviye: [Critical | High | Medium | Low | BELİRTİLMEMİŞ]
+- Gerekçe: [Kullanıcı tarafından belirtilmezse bu alanı doldurma, sor]
 
 ### Ek Notlar
 [Bağlam, kısıtlar, referanslar — varsa]
@@ -49,6 +50,7 @@ So that [elde etmek istediği fayda].
 3. **Birden fazla talep varsa ayır.** Gelen metin aslında birden fazla bağımsız iş içeriyorsa, her biri için ayrı şablon oluştur ve kullanıcıya bildir.
 4. **Tür belirsizse sor.** Feature mi, bug fix mi, teknik iyileştirme mi olduğu anlaşılamıyorsa kullanıcıya sor.
 5. **Bileşen tespiti için ipuçlarına bak.** "API", "endpoint", "servis" → Backend. "Ekran", "sayfa", "buton" → Frontend/Mobile. "Tablo", "migration", "şema" → Database.
+6. **Dil kuralı.** Şablonu Türkçe doldur, teknik terimleri İngilizce orijinal halleriyle kullan.
 
 ---
 
@@ -56,7 +58,7 @@ So that [elde etmek istediği fayda].
 
 Şablonu doldurmaya çalış. Eğer şu alanlardan **biri bile doldurulamazsa**, task üretimine geçmeden önce kullanıcıya sor:
 
-- Kullanıcı hikayesindeki **rol** (`As a [?]`)
+- Kullanıcı hikayesindeki **rol** (`Bir [?] olarak`)
 - **Etkilenen bileşenler** (hiçbiri tespit edilemiyorsa)
 - **Kabul kriterleri** (tamamen belirsizse)
 
@@ -78,3 +80,4 @@ Normalleştirme tamamlandığında şunu yap:
    > ⚠️ **Varsayımlar:**
    > - Kullanıcı rolü "tenant" olarak varsayıldı, çünkü metinde "kiracı" geçiyor.
 3. Kullanıcıya sor: *"Bu şablonu onaylıyor musun? Devam etmemi istersen tasklara böleceğim."*
+4. Kullanıcı onayladığında, task decomposition aşamasına (`03-decompose.md`) geç.
