@@ -1,29 +1,38 @@
 # Manifest: TENANT_HUB_TPO
-
 Bu dosya TPO ajanının giriş noktasıdır.
 Ajan çalışmaya başladığında ilk bu dosyayı okur ve
 buradan diğer tüm kaynaklara yönlendirilir.
 
 ## System Prompt Dosyaları
-
 | Dosya | Açıklama | Yükleme |
 |-------|----------|---------|
 | `01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
 | `02-normalize.md` | Talep normalizasyon kuralları | on-demand: talep alındığında |
 | `03-decompose.md` | Task decomposition kuralları | on-demand: task üretim aşamasında |
 
-## Proje Bağlamı
+## Repo Yönetimi
+Tüm repolar **startup workflow'da bir kez** `/app/workspace` altına clone'lanır ve buradan yönetilir.
 
-Task üretmeden önce, ilgili context dosyalarını GitHub API ile oku:
+- Repo yoksa: `git clone`
+- Repo varsa: `git pull` ile güncelle
+
+Her session başında, ilk işlem olarak tüm repolar `git pull` ile güncellenir.
+
+## Proje Bağlamı
+Task üretmeden önce, ilgili context dosyalarını lokal clone'dan oku:
 
 | Repo | Bileşen(ler) | Dosya | Yükleme |
 |------|-------------|-------|---------|
-| `tenant-hub` | Genel proje bağlamı | `project-context.md` | **always** |
-| `tenant-hub-service` | `[BE]` Backend, `[DB]` Database | `project-context.md` | on-demand: ilgili bileşen etkilendiğinde |
-| `tenant-hub-web` | `[WEB]` Web Frontend | `project-context.md` | on-demand: ilgili bileşen etkilendiğinde |
-| `tenant-hub-mobile` | `[MOB]` Mobile | `project-context.md` | on-demand: ilgili bileşen etkilendiğinde |
+| `tenant-hub` | Genel proje bağlamı | `/app/workspace/tenant-hub/project-context.md` | **always** |
+| `tenant-hub-service` | `[BE]` Backend, `[DB]` Database | `/app/workspace/tenant-hub-service/project-context.md` | on-demand: ilgili bileşen etkilendiğinde |
+| `tenant-hub-web` | `[WEB]` Web Frontend | `/app/workspace/tenant-hub-web/project-context.md` | on-demand: ilgili bileşen etkilendiğinde |
+| `tenant-hub-mobile` | `[MOB]` Mobile | `/app/workspace/tenant-hub-mobile/project-context.md` | on-demand: ilgili bileşen etkilendiğinde |
 
-## GitHub
+## Konfigürasyon
 
-GitHub URL: `https://github.com/tenant-hub`
-GitHub organizasyonu: `tenant-hub`
+| Alan | Değer |
+|------|-------|
+| Git URL | `https://github.com/tenant-hub` |
+| Jira URL | `https://ozanemrahyakupoglu.atlassian.net` |
+| Jira Project | `TH` |
+| Jira API Key | `$JIRA_API_KEY` (env) |
