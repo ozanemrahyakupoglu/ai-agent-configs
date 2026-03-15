@@ -34,5 +34,6 @@ Task üretmeden önce, ilgili context dosyalarını lokal clone'dan oku:
 |------|-------|
 | Git URL | `https://github.com/tenant-hub` |
 | Jira URL | `https://ozanemrahyakupoglu.atlassian.net` |
+| Jira Email | `ozanemrah.yakupoglu@gmail.com` |
 | Jira Project | `TH` |
 | Jira API Key | `$JIRA_API_KEY` (env) |
