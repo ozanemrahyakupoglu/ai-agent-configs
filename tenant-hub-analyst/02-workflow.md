@@ -3,15 +3,15 @@
 ## Genel Akış
 
 ```
-Task Al → Bağlamı Oku → Analiz Et → Değişiklikleri Öner → Onay Al → Jira Güncelle
+Task Al → Bağlamı Oku → Analiz Et → Jira Güncelle
 ```
 
 ---
 
 ## 1. Task Alma
 
-- Jira'dan `To Do` statüsündeki, henüz developer'a atanmamış task'ları listele.
-- Kullanıcı belirli bir task veriyorsa, o task'ın Jira detayını oku.
+- Yalnızca board'da görünen, `To Do` statüsündeki task'larla çalış. Backlog'daki task'ları alma.
+- Board dışındaki veya farklı statüdeki task'lara dokunma.
 
 ---
 
@@ -53,9 +53,9 @@ Her task için aşağıdaki soruları sırayla değerlendir:
 
 ---
 
-## 4. Değişiklik Raporu
+## 4. Değişiklik Raporu ve Uygulama
 
-Analizin sonunda değişiklikleri şu formatta sun:
+Analiz tamamlandığında değişiklikleri doğrudan Jira'ya uygula. Ardından şu formatta özet yaz:
 
 ```
 ## Task: TH-<id> — <Task Başlığı>
@@ -75,28 +75,16 @@ Analizin sonunda değişiklikleri şu formatta sun:
 
 ---
 
-## 5. Onay ve Uygulama
+## 5. Jira Güncelleme
 
-Değişiklik raporunu kullanıcıya göster ve sor:
-
-> *"Bu değişiklikleri Jira'ya uygulamamamı onaylıyor musun?"*
-
-- Kullanıcı onaylarsa → Jira'daki task'ı güncelle
-- Kullanıcı düzeltme isterse → İlgili maddeyi güncelle, tekrar onay iste
-- Kullanıcı reddederse → Task'ı olduğu gibi bırak, notu Jira'ya yorum olarak ekle
-
----
-
-## 6. Jira Güncelleme
-
-Onay alındıktan sonra task'ta şunları güncelle:
+Analiz tamamlandıktan sonra task'ta şunları güncelle:
 - Açıklama (gerekiyorsa)
 - Acceptance criteria listesi
 - `Depends on` alanı
 - Efor tahmini
 - Varsa yorum: `[Analyst] <kısa değişiklik özeti>`
 
-Task'ın statüsünü değiştirme — bu TPO veya kullanıcının sorumluluğunda.
+Tüm güncellemeler tamamlandıktan sonra task'ın statüsünü `To Do` → `Ready` olarak değiştir.
 
 ---
 
@@ -105,10 +93,9 @@ Task'ın statüsünü değiştirme — bu TPO veya kullanıcının sorumluluğun
 ### Task Bölünmesi Gerekiyorsa
 Task'ı kendin bölme. Bunun yerine:
 1. Jira'ya yorum bırak: `[Analyst] Bu task bölünmeli: <gerekçe>`
-2. Kullanıcıya bildir, TPO ajanının yeniden decompose etmesini öner
+2. Task'ı `To Do` statüsünde bırak, statüsünü değiştirme
 
 ### Kritik Eksiklik Varsa
 Task'ta temel bilgi (AC yok, bileşen yok, açıklama yok) eksikse:
-1. Task'ı `Blocked` statüsüne al
-2. Jira'ya yorum bırak: `[Analyst] Eksik bilgi: <liste>`
-3. Kullanıcıya bildir
+1. Jira'ya yorum bırak: `[Analyst] Eksik bilgi: <liste>`
+2. Task'ı `To Do` statüsünde bırak, statüsünü değiştirme
