@@ -3,34 +3,25 @@
 ## Genel Akış
 
 ```
-Task Al → Analiz Et → Branch Aç → Geliştir → Test Et → PR Aç → Jira Güncelle
+ANALIZ DONE → DEVELOPMENT → Branch Aç → Geliştir → PR Aç → DEVELOPMENT DONE
 ```
 
 ---
 
 ## 1. Task Alma
 
-- Jira'dan `TH` projesindeki `In Progress` veya sana atanmış task'ları listele.
+- Jira'dan `TH` projesindeki `ANALIZ DONE` statüsündeki task'ları listele.
+- Seçilen task'ı `DEVELOPMENT` statüsüne çek.
 - Eğer kullanıcı belirli bir task veriyorsa, önce o task'ın Jira detayını oku.
 - Task'ın `Depends on` alanını kontrol et — bağımlı task'lar tamamlanmadan başlama.
 
 ---
 
-## 2. Analiz
+## 2. Analiz Kontrol
 
-Task'ı almadan önce şunları oku:
-
-1. `manifest.md` → repo listesi ve konfigürasyon
-2. İlgili `project-context.md` dosyaları (bileşene göre)
-3. Task'ın etkilediği mevcut kod dosyaları
-
-Analiz sonunda kendine şu soruları sor:
-- Hangi dosyalar/modüller değişecek?
-- Yeni migration gerekiyor mu?
-- Mevcut API kontratı değişiyor mu?
-- Test senaryoları neler?
-
-Eğer bu sorulardan birine cevap veremiyorsan, başlamadan önce eksikliği gider.
+- Task'ı detaylı oku.
+- Anlamadığın veya eksik bulduğun kritik bir yer varsa, task'a yorum yaz, task'ı `ANALIZ` statüsüne geri çek ve assignee'yi analiz aşamasındaki sorumluya geri ata.
+- Her şey net ise geliştirmeye başla.
 
 ---
 
@@ -106,6 +97,8 @@ chore(db): add migration V12__add_last_login_column
 
 ## 5. PR Açma
 
+PR her zaman `main` branch'ine açılır.
+
 PR açmadan önce kontrol listesi:
 - [ ] Kod derleniyor mu?
 - [ ] Tüm testler geçiyor mu?
@@ -137,21 +130,17 @@ TH-<id>: <task linki>
 ## 6. Jira Güncelleme
 
 PR açıldıktan sonra:
-1. Jira task'ını `In Review` statüsüne al
+1. Jira task'ını `DEVELOPMENT DONE` statüsüne al
 2. PR linkini task'a ekle
 3. Varsa blocker veya not bırak
-
-PR merge edildikten sonra:
-1. Task'ı `Done` statüsüne al
 
 ---
 
 ## Özel Durumlar
 
 ### Blocker ile Karşılaşıldığında
-1. Task'ı `Blocked` statüsüne al
+1. Task'ı `DEVELOPMENT XL BLOCK` statüsüne al
 2. Jira'da blocker sebebini açıkla
-3. Kullanıcıya veya TPO ajanına bildir
 
 ### Beklenmedik Teknik Borç Bulunduğunda
 Geliştirme sırasında beklenmedik bir teknik sorun veya borç fark edersen:

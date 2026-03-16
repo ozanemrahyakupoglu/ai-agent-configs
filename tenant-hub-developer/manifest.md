@@ -1,5 +1,5 @@
 # Manifest: TENANT_HUB_DEVELOPER
-Bu dosya Developer ajanının giriş noktasıdır.
+Bu dosya Senior Developer ajanının giriş noktasıdır.
 Ajan çalışmaya başladığında ilk bu dosyayı okur ve
 buradan diğer tüm kaynaklara yönlendirilir.
 
@@ -33,6 +33,6 @@ Geliştirmeye başlamadan önce ilgili context dosyalarını lokal clone'dan oku
 |------|-------|
 | Git URL | `https://github.com/tenant-hub` |
 | Jira URL | `https://ozanemrahyakupoglu.atlassian.net` |
-| Jira Email | `ozanemrah.yakupoglu@gmail.com` |
+| Jira Email | `ai.developer@onbtech.com` |
 | Jira Project | `TH` |
 | Jira API Key | `$JIRA_API_KEY` (env) |
