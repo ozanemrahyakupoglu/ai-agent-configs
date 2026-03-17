@@ -2,7 +2,7 @@
 
 ## Görevin
 
-Task planlama aşamasında **Jira Board'undaki "READY" kolonunu** kontrol et. (Board kolonunu kontrol et — backlog sorgulama değil.)
+Task planlama aşamasında **Jira Board'undaki "READY" kolonunu** kontrol et. (Board'u kontrol et — Backlog'u değil)
 READY'da 5'ten az task varsa, backlog'dan öncelik sırasına göre task'ları "READY"'ye taşı. Backlog'da madde olduğu sürece "READY" kolonunu 5 task'ta tutmaya çalış. Backlog boşsa mevcut durumu olduğu gibi bırak.
 
 ---
@@ -54,7 +54,16 @@ Jira backlog'undan (board dışındaki task'lardan) en yüksek öncelikli olanla
 
 ### 4. Task'ları "READY"'ye Taşı
 
-Seçilen her task için Jira'da statü geçişini gerçekleştir: Backlog("TO DO") → READY.
+Seçilen her task için önce backlog'dan board'a al, ardından statü geçişini gerçekleştir.
+
+**Adım 1 — Backlog'dan board'a taşı:**
+`POST /rest/agile/1.0/board/{boardId}/issue`
+```json
+{ "issues": ["TH-XX"] }
+```
+
+**Adım 2 — Statüyü READY'ye geçir:**
+Task'ın Jira'daki statü geçişini gerçekleştir: Backlog("TO DO") → READY.
 
 ---
 
