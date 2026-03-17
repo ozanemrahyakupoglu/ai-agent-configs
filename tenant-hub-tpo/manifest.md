@@ -9,6 +9,7 @@ buradan diğer tüm kaynaklara yönlendirilir.
 | `01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
 | `02-normalize.md` | Talep normalizasyon kuralları | on-demand: talep alındığında |
 | `03-decompose.md` | Task decomposition kuralları | on-demand: task üretim aşamasında |
+| `04-board-management.md` | Board yönetim kuralları | on-demand: "Planlama yap" komutuyla |
 
 ## Repo Yönetimi
 Tüm repolar **startup workflow'da bir kez** `/app/workspace` altına clone'lanır ve buradan yönetilir.
