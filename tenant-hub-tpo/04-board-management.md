@@ -2,8 +2,8 @@
 
 ## Görevin
 
-Task planlama aşamasında **Jira board'undaki "READY" kolonunu** kontrol et.
-READY'da 3'ten az task varsa, backlog'dan öncelik sırasına göre task'ları "READY"'ye taşı. Backlog'da madde olduğu sürece "READY" kolonunu 3 task'ta tutmaya çalış. Backlog boşsa mevcut durumu olduğu gibi bırak.
+Task planlama aşamasında **Jira Board'undaki "READY" kolonunu** kontrol et. (Board kolonunu kontrol et — backlog sorgulama değil.)
+READY'da 5'ten az task varsa, backlog'dan öncelik sırasına göre task'ları "READY"'ye taşı. Backlog'da madde olduğu sürece "READY" kolonunu 5 task'ta tutmaya çalış. Backlog boşsa mevcut durumu olduğu gibi bırak.
 
 ---
 
@@ -15,6 +15,19 @@ Bu workflow şu durumlarda çalışır:
 
 ---
 
+## Jira Kanban Yapısı
+
+Bu projede Jira'nın **Kanban board** modeli kullanılıyor. Bu modelde iki farklı görünüm vardır ve ikisi farklı davranır:
+
+| Görünüm | Ne gösterir? | API'de nasıl sorgulanır? |
+|---|---|---|
+| **Backlog** | Board'a henüz alınmamış task'ların havuzu. Statüsü "TO DO" olan ama board'da görünmeyen task'lar burada bekler. | `GET /rest/agile/1.0/board/{boardId}/backlog` |
+| **Board** | Aktif olarak takip edilen kolonlar (READY, IN PROGRESS, DONE vb.). Sadece board'a eklenmiş task'lar görünür. | `GET /rest/agile/1.0/board/{boardId}/issue` |
+
+**Kritik fark:** Jira Kanban'da bir task "TO DO" statüsünde olsa bile board'a taşınmamışsa board kolonlarında **görünmez** — sadece backlog'da kalır. Bu dosyadaki tüm işlemler bu ayrıma göre yapılır.
+
+---
+
 ## Adımlar
 
 ### 1. Board'u Bul
@@ -23,17 +36,17 @@ Jira'daki TH projesi için tanımlı Kanban board'u bul ve ID'sini al. Bu ID son
 
 ---
 
-### 2. "READY" Kolonunu Kontrol Et
+### 2. Board'daki "READY" Kolonunu Kontrol Et
 
-Aktif board üzerinden "READY" statüsündeki task'ları sorgula. Önemli: bu sorgu board'a özel yapılmalı — board dışında kalan (henüz board'a alınmamış backlog) task'lar sayıma dahil edilmemeli.
+Aktif board üzerinden "READY" statüsündeki task'ları sorgula. **Önemli: bu sorgu board'a özel yapılmalı** — board dışında kalan (henüz board'a alınmamış backlog) task'lar sayıma dahil edilmemeli. Backlog sorgusu değil, board kolonu sorgusu yapılacak.
 
-"READY" task sayısı 3 veya daha fazlaysa işlemi durdur, bir şey yapma.
+"READY" task sayısı 5 veya daha fazlaysa işlemi durdur, bir şey yapma.
 
 ---
 
 ### 3. Backlog'dan Adayları Getir
 
-"READY" task sayısı 3'ten azsa, kaç tane taşıman gerektiğini hesapla (hedef: 3).
+"READY" task sayısı 5'ten azsa, kaç tane taşıman gerektiğini hesapla (hedef: 5).
 
 Jira backlog'undan (board dışındaki task'lardan) en yüksek öncelikli olanları sırala. Öncelik eşitse, en eski oluşturulanı öne al. Sadece ihtiyaç kadar task al.
 
@@ -66,4 +79,4 @@ Taşınacak yeterli backlog task'ı yoksa:
 - **Sormadan taşı.** Bu rutin bir operasyondur, her seferinde onay isteme.
 - **Sadece Backlog("TO DO") → READY.** Başka statü geçişleri yapma.
 - **Öncelik sırasına uy.** En yüksek öncelikli task'lar önce taşınır. Eşit önceliklilerde en eski task öne gelir.
-- **Hedef: tam 3.** Ready'yi 3'ün üzerine çıkarma; tam 3'e tamamla.
+- **Hedef: tam 5.** Ready'yi 5'in üzerine çıkarma; tam 5'e tamamla.
