@@ -1,15 +1,21 @@
 {
   "mcpServers": {
-    "puppeteer": {
+    "playwright": {
       "command": "npx",
-      "args": ["-y", "@hisma/server-puppeteer"],
-      "env": {
-        "PUPPETEER_BROWSER_WS_ENDPOINT": "ws://browser:3000"
-      }
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint",
+        "ws://browser:3000",
+        "--headless"
+      ]
     },
     "jira": {
       "command": "npx",
-      "args": ["-y", "@aashari/mcp-server-atlassian-jira"],
+      "args": [
+        "-y",
+        "@aashari/mcp-server-atlassian-jira"
+      ],
       "env": {
         "ATLASSIAN_SITE_NAME": "ozanemrahyakupoglu",
         "ATLASSIAN_USER_EMAIL": "ai.tester@onbtech.com",
@@ -18,7 +24,10 @@
     },
     "github": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "$GITHUB_TOKEN"
       }
