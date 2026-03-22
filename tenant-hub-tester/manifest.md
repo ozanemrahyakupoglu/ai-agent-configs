@@ -4,10 +4,16 @@ Ajan çalışmaya başladığında ilk bu dosyayı okur ve
 buradan diğer tüm kaynaklara yönlendirilir.
 
 ## System Prompt Dosyaları
+Dosyalar `system_prompts/` klasörü altındadır.
+
 | Dosya | Açıklama | Yükleme |
 |-------|----------|---------|
-| `01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
-| `02-workflow.md` | Test alma, uygulama ve raporlama iş akışı | **always** |
+| `system_prompts/01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
+| `system_prompts/02-workflow.md` | Test alma, uygulama ve raporlama iş akışı | **always** |
+
+## MCP Konfigürasyonu
+MCP server tanımları `settings.json` dosyasında tutulur.
+Bu dosya container başlatılırken `/home/claude-bot/.claude/settings.json` olarak mount edilir.
 
 ## Repo Yönetimi
 Tüm repolar **startup workflow'da bir kez** `/app/workspace` altına clone'lanır ve buradan yönetilir.
@@ -33,6 +39,6 @@ Test etmeye başlamadan önce ilgili context dosyalarını lokal clone'dan oku:
 |------|-------|
 | Git URL | `https://github.com/tenant-hub` |
 | Jira URL | `https://ozanemrahyakupoglu.atlassian.net` |
-| Jira Email | `ozanemrah.yakupoglu@gmail.com` |
+| Jira Email | `ai.tester@onbtech.com` |
 | Jira Project | `TH` |
 | Jira API Key | `$JIRA_API_KEY` (env) |

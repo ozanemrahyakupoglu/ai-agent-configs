@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@hisma/server-puppeteer"],
+      "env": {
+        "PUPPETEER_BROWSER_WS_ENDPOINT": "ws://browser:3000"
+      }
+    },
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "@aashari/mcp-server-atlassian-jira"],
+      "env": {
+        "ATLASSIAN_SITE_NAME": "ozanemrahyakupoglu",
+        "ATLASSIAN_USER_EMAIL": "ai.tester@onbtech.com",
+        "ATLASSIAN_API_TOKEN": "$JIRA_API_KEY"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "$GITHUB_TOKEN"
+      }
+    }
+  }
+}
