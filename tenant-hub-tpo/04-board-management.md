@@ -22,7 +22,7 @@ Bu projede Jira'nın **Kanban board** modeli kullanılıyor. Bu modelde iki fark
 | Görünüm | Ne gösterir? | API'de nasıl sorgulanır? |
 |---|---|---|
 | **Backlog** | Board'a henüz alınmamış task'ların havuzu. Statüsü "TO DO" olan ama board'da görünmeyen task'lar burada bekler. | `GET /rest/agile/1.0/board/{boardId}/backlog` |
-| **Board** | Aktif olarak takip edilen kolonlar (READY, IN PROGRESS, DONE vb.). Sadece board'a eklenmiş task'lar görünür. | `GET /rest/agile/1.0/board/{boardId}/issue` |
+| **Board** | Aktif olarak takip edilen kolonlar (READY, IN PROGRESS, DONE vb.). Sadece board'a eklenmiş task'lar görünür. | `POST /rest/agile/1.0/board/{boardId}/issue` |
 
 **Kritik fark:** Jira Kanban'da bir task "TO DO" statüsünde olsa bile board'a taşınmamışsa board kolonlarında **görünmez** — sadece backlog'da kalır. Bu dosyadaki tüm işlemler bu ayrıma göre yapılır.
 
