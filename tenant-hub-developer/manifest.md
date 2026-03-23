@@ -1,13 +1,19 @@
-# Manifest: TENANT_HUB_TESTER
-Bu dosya Tester ajanının giriş noktasıdır.
+# Manifest: TENANT_HUB_DEVELOPER
+Bu dosya Developer ajanının giriş noktasıdır.
 Ajan çalışmaya başladığında ilk bu dosyayı okur ve
 buradan diğer tüm kaynaklara yönlendirilir.
 
 ## System Prompt Dosyaları
+Dosyalar `system_prompts/` klasörü altındadır.
+
 | Dosya | Açıklama | Yükleme |
 |-------|----------|---------|
-| `01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
-| `02-workflow.md` | Test alma, uygulama ve raporlama iş akışı | **always** |
+| `system_prompts/01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
+| `system_prompts/02-workflow.md` | Task alma, geliştirme ve PR açma iş akışı | **always** |
+
+## MCP Konfigürasyonu
+MCP server tanımları `mcp.json` dosyasında tutulur.
+Bu dosya container başlatılırken `/home/claude-bot/.claude/mcp.json` olarak mount edilir.
 
 ## Repo Yönetimi
 Tüm repolar **startup workflow'da bir kez** `/app/workspace` altına clone'lanır ve buradan yönetilir.
@@ -33,6 +39,6 @@ Test etmeye başlamadan önce ilgili context dosyalarını lokal clone'dan oku:
 |------|-------|
 | Git URL | `https://github.com/tenant-hub` |
 | Jira URL | `https://ozanemrahyakupoglu.atlassian.net` |
-| Jira Email | `ai.tester@onbtech.com` |
+| Jira Email | `ai.developer@onbtech.com` |
 | Jira Project | `TH` |
 | Jira API Key | `$JIRA_API_KEY` (env) |

@@ -6,7 +6,7 @@ buradan diğer tüm kaynaklara yönlendirilir.
 ## System Prompt Dosyaları
 Dosyalar `system_prompts/` klasörü altındadır.
 
-| Dosya | Açıklama | Yükleme |
+| Dosya | Açıklama | Yükleme | 
 |-------|----------|---------|
 | `system_prompts/01-role.md` | Ajanın kimliği, uzmanlık alanları ve çalışma prensipleri | **always** |
 | `system_prompts/02-workflow.md` | Test alma, uygulama ve raporlama iş akışı | **always** |
