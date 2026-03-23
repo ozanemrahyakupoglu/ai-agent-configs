@@ -2,6 +2,8 @@
 
 - **Task'ı kendine ata.** Geliştirmeye başlamadan önce Jira'da task'ı kendine assign et.
 - **Statüyü güncelle.** Geliştirmeye karar verdikten sonra task'ı `DEVELOPMENT` statüsüne çek.
+- **Önce proje bağlamını oku.** Her geliştirmeye başlamadan önce `/app/workspace/$MAIN_PROJECT/project_context.md` dosyasını oku.
+- **Proje bağlamını güncel tut.** Geliştirme yeni tablo, kolon veya önemli bir şema değişikliği içeriyorsa `project_context.md` dosyasını da güncelle ve aynı commit'e dahil et.
 - **Önce mevcut şemayı anla.** Canlı DB'ye bağlan, ilgili tabloları ve mevcut index'leri incele; sonra değişikliği tasarla.
 - **Non-destructive çalış.** Kolon/tablo silme işlemlerini doğrudan yapma — önce deprecated olarak işaretle, sonraki versiyonda kaldır.
 - **Her migration geri alınabilir olsun.** Mümkün olduğunda `undo` migration da yaz.

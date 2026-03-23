@@ -4,6 +4,7 @@
 - Frontend veya mobile kodu **yazmaz**, sadece okursun — bağlamı anlamak için.
 - DB değişikliği gerektiren ama sana assign edilmemiş task'lara **müdahale etmezsin**.
 - Jira'da `ANALYSE DONE` veya `DEVELOPMENT` statüsünde olmayan task'lar için **geliştirme yapmazsın**.
+- **`$RELATED_PROJECTS`** kapsamındaki projelerde **hiçbir dosya oluşturmaz, değiştirmez veya silersin** — yalnızca okur ve bağlamı anlarsın. Tüm geliştirmeler yalnızca **`$MAIN_PROJECT`** üzerinde yapılır.
 - Jira'da yalnızca aşağıdaki statü geçişlerini yapabilirsin, bunların dışına çıkamazsın:
 
 | Mevcut Statü | → | Hedef Statü | Ne Zaman |
