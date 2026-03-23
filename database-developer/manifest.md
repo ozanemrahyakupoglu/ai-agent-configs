@@ -34,5 +34,6 @@ Bu dosya container başlatılırken `/home/claude-bot/.claude/mcp.json` olarak m
 | İlgili Projeler Git URL | `$RELATED_PROJECTS_GIT_URLS` (env) — `$RELATED_PROJECTS` ile aynı sırada, `,` ile ayrılmış Git URL'leri (ör. `https://github.com/org/backend,https://github.com/org/mobile`) |
 | Veritabanı | `$DATABASE_URI` (env) |
 | Git Token | `$GITHUB_TOKEN` (env) |
+| Jira Email | `$JIRA_EMAIL` (env) — Atlassian hesap e-posta adresi |
 | Jira API Key | `$JIRA_API_KEY` (env) |
 | Jira Proje | `$JIRA_PROJECT` (env) — Jira proje anahtarı (ör. `TH`) |

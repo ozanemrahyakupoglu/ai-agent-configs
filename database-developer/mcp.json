@@ -8,7 +8,7 @@
       ],
       "env": {
         "ATLASSIAN_SITE_NAME": "ozanemrahyakupoglu",
-        "ATLASSIAN_USER_EMAIL": "ai.developer@onbtech.com",
+        "ATLASSIAN_USER_EMAIL": "$JIRA_EMAIL",
         "ATLASSIAN_API_TOKEN": "$JIRA_API_KEY"
       }
     },
@@ -32,14 +32,10 @@
     "postgres": {
       "command": "npx",
       "args": [
-        "-y",
-        "@crystaldba/postgres-mcp",
-        "--access-mode",
-        "unrestricted"
-      ],
-      "env": {
-        "DATABASE_URI": "$DATABASE_URI"
-      }
+        "@henkey/postgres-mcp-server",
+        "--connection-string",
+        "postgresql://devuser:password@postgres_host:5432/database_name"
+      ]
     }
   }
 }
