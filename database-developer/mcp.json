@@ -34,7 +34,7 @@
       "args": [
         "@henkey/postgres-mcp-server",
         "--connection-string",
-        "postgresql://postgres:123456789@postgres_host:5432/postgres"
+        "postgresql://postgres:123456789@46.225.97.71:5432/postgres"
       ]
     }
   }
