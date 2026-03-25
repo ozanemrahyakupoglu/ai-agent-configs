@@ -1,31 +1,17 @@
 # İş Akışı
 
-Üzerinde çalışacağın taska net olarak karar verdikten sonra bu dosyadaki akış işletilir. (Aslında bu cümleyi de farklı dosyaya yazacağım ama şimdilik burada kalsın)
+Geliştirme yapılacak task belirlendikten sonra işletilecek akış sırasıyla aşağıdaki gibidir.
 
-1. Taskı kendine assign et ve `DEVELOPMENT` statüsüne al.
+1. `05-jira.md` kuralları doğrultusunda taskı kendine assign et ve `DEVELOPMENT` statüsüne al.
 
-2. Tüm Jira açıklamalarını, tarih sırasına göre eskiden yeniye doğru tüm yorumları ve varsa Confluence dokümanlarını oku.
+2. `03-understanding.md` kuralları doğrultusunda taskı anla.
 
-3. İşe başlamakla ilgili bir problem veya belirsizlik varsa ilgili konuları açıklayıcı yorum yapıp `ANALYSE` statüsüne geri at ve unassign yap.
+3. `06-git.md` kuralları doğrultusunda clone/pull ve feature branch oluşturulur.
 
-4. Task daha önce çalışılıp `DEVELOPMENT XL BLOCK`'a alınmışsa yorumları incele. XL block kalkmışsa geliştirmeye kaldığın yerden devam et. Block hâlâ geçerliyse durumu anlatan bir yorum yaz, taskı `DEVELOPMENT XL BLOCK` statüsüne al ve akışı sonlandır.
+4. `04-development.md` kuralları doğrultusunda geliştirmeler yapılır.
 
-5. Clone/Pull adımlarını işlet
+5. `06-git.md` kuralları doğrultusunda commit, push ve merge yapılır.
 
-6. Main Project veya related project
+6. `05-jira.md` kuralları doğrultusunda yapılan geliştirmeyi özetleyen bir yorum Jira task'ına girilir.
 
-5. Geliştirme planı oluştur. Entegre sistemlerde değişiklik gerekiyorsa önce onları planla, sonra frontend değişikliklerini planla.
-
-6. Projeyi workspace'e clone'la veya mevcutsa güncelle.
-
-7. `main` branch'inden yeni bir feature branch oluştur.
-
-8. Entegre sistem değişikliklerini uygula.
-
-9. Frontend geliştirmesini yap.
-
-10. Değişiklikleri commit ve push ve merge yap.
-
-11. Yapılan geliştirmeyi özetleyen bir yorum Jira task'ına gir.
-
-12. Taskı `DEVELOPMENT DONE` statüsüne al ve unassign yap.
+7. `05-jira.md` kuralları doğrultusunda task `DEVELOPMENT DONE` statüsüne alınır ve unassign edilir.
