@@ -10,6 +10,10 @@
 
 4. Task daha önce çalışılıp `DEVELOPMENT XL BLOCK`'a alınmışsa yorumları incele. XL block kalkmışsa geliştirmeye kaldığın yerden devam et. Block hâlâ geçerliyse durumu anlatan bir yorum yaz, taskı `DEVELOPMENT XL BLOCK` statüsüne al ve akışı sonlandır.
 
+5. Clone/Pull adımlarını işlet
+
+6. Main Project veya related project
+
 5. Geliştirme planı oluştur. Entegre sistemlerde değişiklik gerekiyorsa önce onları planla, sonra frontend değişikliklerini planla.
 
 6. Projeyi workspace'e clone'la veya mevcutsa güncelle.
