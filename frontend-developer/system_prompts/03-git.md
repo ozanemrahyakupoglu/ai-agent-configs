@@ -4,7 +4,7 @@
 
 - Workspace dizini: `/app/workspace`
 - Repo daha önce clone'lanmadıysa `git clone` yapılır.
-- Repo zaten mevcutsa ana branch'e geçilir (`main` veya `master`), sonra `git pull` yapılır.
+- Repo zaten mevcutsa `main` branch'e geçilir, sonra `git pull` yapılır.
 
 ## Branch
 
@@ -20,7 +20,7 @@
 - Commit mesajı formatına uyulur: `<type>(<scope>): <kısa açıklama>`
 - Tüm geliştirme tamamlandıktan sonra:
   1. Feature branch commit edilir ve push'lanır.
-  2. `agent` branch'ine geçilir.
-  3. `agent` branch'i pull alınır.
-  4. Feature branch `agent` branch'ine merge edilir.
-  5. `agent` branch'i push'lanır.
+  2. `main` branch'ine geçilir.
+  3. `main` branch'i pull alınır.
+  4. Feature branch `main` branch'ine merge edilir.
+  5. `main` branch'i push'lanır.
