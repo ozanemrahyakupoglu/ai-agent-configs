@@ -36,6 +36,16 @@
         "--connection-string",
         "postgresql://postgres:123456789@46.225.97.71:5432/postgres"
       ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint",
+        "ws://browser:3000",
+        "--headless"
+      ]
     }
   }
 }

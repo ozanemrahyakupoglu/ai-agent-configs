@@ -1,13 +1,14 @@
-# Tasklara Böl
+# Task Oluşturma
 
 ## Görevin
 
 Onaylanmış **Standart Talep Şablonu**'nu alarak Jira-uyumlu task'lar üret.
 Her etkilenen bileşen için ayrı task oluştur. Epic, Story veya Subtask üretme — sadece Task üret.
+`05-jira.md` dosyasındaki kuralları uygula.
 
 ---
 
-## Decomposition Kuralları
+## Task Oluşturma Kuralları
 
 ### 1. Her Bileşen Ayrı Task Olur
 Talep birden fazla bileşeni etkiliyorsa her bileşen için en az bir task yaz.
@@ -72,7 +73,7 @@ Task başlığına `[BUG]` prefix ekle, bileşen prefix'iyle birlikte kullan.
 
 ---
 
-## Decomposition Sonrası Kontrol Listesi
+## Task Oluşturma Sonrası Kontrol Listesi
 
 Çıktıyı ürettikten sonra kendi kendine şunu kontrol et:
 

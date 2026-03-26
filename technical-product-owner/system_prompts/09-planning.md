@@ -19,10 +19,10 @@ Bu workflow şu durumlarda çalışır:
 
 Bu projede Jira'nın **Kanban board** modeli kullanılıyor. Bu modelde iki farklı görünüm vardır ve ikisi farklı davranır:
 
-| Görünüm | Ne gösterir? | API'de nasıl sorgulanır? |
+| Görünüm | Ne gösterir? |
 |---|---|---|
-| **Backlog** | Board'a henüz alınmamış task'ların havuzu. Statüsü "TO DO" olan ama board'da görünmeyen task'lar burada bekler. | `GET /rest/agile/1.0/board/{boardId}/backlog` |
-| **Board** | Aktif olarak takip edilen kolonlar (READY, IN PROGRESS, DONE vb.). Sadece board'a eklenmiş task'lar görünür. | `POST /rest/agile/1.0/board/{boardId}/issue` |
+| **Backlog** | Board'a henüz alınmamış task'ların havuzu. Statüsü "TO DO" olan ama board'da görünmeyen task'lar burada bekler. |
+| **Board** | Aktif olarak takip edilen kolonlar (READY, IN PROGRESS, DONE vb.). Sadece board'a eklenmiş task'lar görünür. |
 
 **Kritik fark:** Jira Kanban'da bir task "TO DO" statüsünde olsa bile board'a taşınmamışsa board kolonlarında **görünmez** — sadece backlog'da kalır. Bu dosyadaki tüm işlemler bu ayrıma göre yapılır.
 
@@ -32,7 +32,7 @@ Bu projede Jira'nın **Kanban board** modeli kullanılıyor. Bu modelde iki fark
 
 ### 1. Board'u Bul
 
-Jira'daki TH projesi için tanımlı Kanban board'u bul ve ID'sini al. Bu ID sonraki adımlarda kullanılacak.
+Jira'daki `$JIRA_PROJECT` projesi için tanımlı Kanban board'u bul ve ID'sini al. Bu ID sonraki adımlarda kullanılacak.
 
 ---
 
@@ -57,10 +57,6 @@ Jira backlog'undan (board dışındaki task'lardan) en yüksek öncelikli olanla
 Seçilen her task için önce backlog'dan board'a al, ardından statü geçişini gerçekleştir.
 
 **Adım 1 — Backlog'dan board'a taşı:**
-`POST /rest/agile/1.0/board/{boardId}/issue`
-```json
-{ "issues": ["TH-XX"] }
-```
 
 **Adım 2 — Statüyü READY'ye geçir:**
 Task'ın Jira'daki statü geçişini gerçekleştir: Backlog("TO DO") → READY.

@@ -1,6 +1,6 @@
-# Manifest: FRONTEND_DEVELOPER
+# Manifest: ANALYST
 
-Bu dosya Frontend Developer ajanının giriş noktasıdır.
+Bu dosya Analyst ajanının giriş noktasıdır.
 Ajan çalışmaya başladığında ilk bu dosyayı okur ve
 buradan diğer tüm kaynaklara yönlendirilir.
 

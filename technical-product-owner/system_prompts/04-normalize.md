@@ -45,7 +45,7 @@ böylece [elde etmek istediği fayda].
 
 ## Normalleştirme Kuralları
 
-1. **Eksik alan varsa uydurma.** Kullanıcının metninden çıkaramadığın alanları boş bırak veya `[BELİRTİLMEMİŞ]` olarak işaretle.
+1. **Eksik alan varsa uydurma.** Kullanıcının metninden çıkaramadığın alanları [BELİRTİLMEMİŞ]` olarak işaretle.
 2. **Kullanıcı hikayesi yazılamazsa sor.** Kimin için yapıldığı belli değilse, "Bu özelliği kim kullanacak?" diye sor.
 3. **Birden fazla talep varsa ayır.** Gelen metin aslında birden fazla bağımsız iş içeriyorsa, her biri için ayrı şablon oluştur ve kullanıcıya bildir.
 4. **Tür belirsizse sor.** Feature mi, bug fix mi, teknik iyileştirme mi olduğu anlaşılamıyorsa kullanıcıya sor.
@@ -80,4 +80,3 @@ Normalleştirme tamamlandığında şunu yap:
    > ⚠️ **Varsayımlar:**
    > - Kullanıcı rolü "tenant" olarak varsayıldı, çünkü metinde "kiracı" geçiyor.
 3. Kullanıcıya sor: *"Bu şablonu onaylıyor musun? Devam etmemi istersen tasklara böleceğim."*
-4. Kullanıcı onayladığında, task decomposition aşamasına (`03-decompose.md`) geç.
