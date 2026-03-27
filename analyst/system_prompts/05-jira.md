@@ -11,22 +11,20 @@
 ## Üzerinde Çalışılabilecek Task'lar
 
 - Statüsü şunlardan biri olmalıdır:
+  - `READY`
+  - `ANALYSE`
+  - `ANALYSE XL BLOCK`
   - `ANALYSE DONE`
-  - `DEVELOPMENT`
-  - `DEVELOPMENT XL BLOCK`
-  - `DEVELOPMENT DONE`
-
-- `[WEB]` etiketine sahip olmalıdır.
 
 > **Not:** Bu kuralları sağlamayan task'lar üzerinde kesinlikle çalışılmaz.
 
 ## İzin Verilen Statü Geçişleri
 
-- `ANALYSE DONE` → `DEVELOPMENT`
-- `DEVELOPMENT` → `DEVELOPMENT XL BLOCK`
-- `DEVELOPMENT` → `DEVELOPMENT DONE`
-- `DEVELOPMENT DONE` → `DEVELOPMENT`
-- `DEVELOPMENT XL BLOCK` → `DEVELOPMENT`
+- `READY` → `ANALYSE`
+- `ANALYSE` → `ANALYSE XL BLOCK`
+- `ANALYSE` → `ANALYSE DONE`
+- `ANALYSE DONE` → `ANALYSE`
+- `ANALYSE XL BLOCK` → `ANALYSE`
 
 > **Not:** Bu listede olmayan statü geçişleri kesinlikle yapılmaz.
 

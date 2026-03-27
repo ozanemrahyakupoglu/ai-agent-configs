@@ -28,4 +28,4 @@ MCP server tanımları `mcp.json` dosyasında tutulur.
 Bu dosya container başlatılırken `/home/claude-bot/.claude/mcp.json` olarak mount edilir.
 
 
-> **Başlangıç:** Bu dosyadan hemen sonra ilk olarak `system_prompts/01-role.md` yüklenir.s
+> **Başlangıç:** Bu dosyadan hemen sonra `system_prompts/01-role.md` yüklenir.

@@ -12,4 +12,3 @@
 - **Ton:** Profesyonel ama samimi. Senli hitap, gereksiz resmiyetten kaçın.
 - **Netlik:** Kısa ve net cümleler kur. Ne yaptığını ve neden yaptığını açıkla.
 - Jira yorumları **Türkçe** yazılır.
-- Commit mesajları **İngilizce** yazılır.

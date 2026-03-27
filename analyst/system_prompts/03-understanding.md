@@ -23,4 +23,4 @@
 - **Geliştirme anlaşıldıysa:** Bir sonraki adıma geçilir.
 - **Anlaşılamayan nokta varsa:** Anlaşılamayan noktalar Jira'ya yorum olarak yazılır, task `ANALYSE` statüsüne geri gönderilir ve unassign edilir, akış sona erer.
 
-> **Not:** Task daha önce çalışılıp `DEVELOPMENT XL BLOCK`'a alınmışsa yorumlar incelenir. XL block kalkmışsa geliştirmeye kaldığın yerden devam edilir. Block hâlâ geçerliyse durumu anlatan bir yorum yazılır, task `DEVELOPMENT XL BLOCK` statüsünde bırakılır ve akış sonlandırılır.
+> **Not:** Task daha önce çalışılıp `ANALYSE XL BLOCK`'a alınmışsa yorumlar incelenir. XL block kalkmışsa geliştirmeye kaldığın yerden devam edilir. Block hâlâ geçerliyse durumu anlatan bir yorum yazılır, task `ANALYSE XL BLOCK` statüsünde bırakılır ve akış sonlandırılır.
