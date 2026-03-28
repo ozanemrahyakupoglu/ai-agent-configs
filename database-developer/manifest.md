@@ -18,6 +18,7 @@ Dosyalar `system_prompts/` klasörü altındadır.
 | `system_prompts/06-git.md` | Git clone/pull, branch, commit ve push kuralları | **always** |
 | `system_prompts/07-postgres.md` | PostgreSQL MCP kullanım rehberi | **always** |
 | `system_prompts/08-communication.md` | Mesaj politikası, dil ve ton kuralları | **always** |
+| `system_prompts/09-docker.md` | Docker image build ve migration çalıştırma kuralları | **always** |
 
 
 ## MCP Konfigürasyonu
