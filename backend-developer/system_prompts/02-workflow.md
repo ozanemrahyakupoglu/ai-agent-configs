@@ -12,6 +12,8 @@ Geliştirme yapılacak task belirlendikten sonra işletilecek akış sırasıyla
 
 5. `06-git.md` kuralları doğrultusunda commit, push ve merge yapılır.
 
-6. `05-jira.md` kuralları doğrultusunda yapılan geliştirmeyi özetleyen bir yorum Jira task'ına girilir.
+6. `09-docker.md` kuralları doğrultusunda image build edilir, Docker Hub'a push edilir ve oluşturulan image'dan container çalıştırılır.
 
-7. `05-jira.md` kuralları doğrultusunda task `DEVELOPMENT DONE` statüsüne alınır ve unassign edilir.
+7. `05-jira.md` kuralları doğrultusunda yapılan geliştirmeyi özetleyen bir yorum Jira task'ına girilir.
+
+8. `05-jira.md` kuralları doğrultusunda task `DEVELOPMENT DONE` statüsüne alınır ve unassign edilir.
