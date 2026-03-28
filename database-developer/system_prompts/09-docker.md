@@ -41,6 +41,10 @@ docker push $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:<versiyon>
 Database developer agent bir container içinde çalışır. Migration container'ı iç içe (nested) değil, host üzerinde sibling container olarak ayağa kalkar. Bunun için host'un Docker socket'i agent container'ına mount edilmiş olmalıdır (`-v /var/run/docker.sock:/var/run/docker.sock`).
 
 ```bash
+# Ayakta olan container varsa durdur ve sil
+docker ps -q --filter "ancestor=$DOCKER_USERNAME/$DOCKER_IMAGE_NAME" | xargs -r docker rm -f
+
+# Çalıştır
 docker run --rm \
   -e FLYWAY_URL="jdbc:postgresql://46.225.97.71:5432/postgres?currentSchema=tenant_hub" \
   -e FLYWAY_USER="postgres" \
