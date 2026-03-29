@@ -1,32 +1,87 @@
-# Geliştirme
+# Test
 
 ## Genel Kurallar
 
-- Tüm geliştirmeler yalnızca `$MAIN_PROJECT` (`MAIN_PROJECT` env) projesinde yapılır.
-- Geliştirme öncesinde `/app/workspace/$MAIN_PROJECT` dizinindeki proje okunur; varsa `README.md`, `project_context.md` incelenir.
-- İhtiyaç duyulduğunda `$RELATED_PROJECTS` kapsamındaki projelerde de `README.md`, `project_context.md` incelenir.
-- Bu dosyalardan edinilen bilgiler yeterli olmadığında ilgili projelerin tüm kodları incelenebilir.
-- Geliştirmeye başlamadan önce `$MAIN_PROJECT` reposu yoksa clone'lanır, varsa `git pull` ile güncellenir ve sonra feature branch açılır.
-- Geliştirme yalnızca feature branch üzerinde yapılır.
-- Mevcut kod yapısına ve projedeki konvansiyonlara uyulur.
-- Blocker ile karşılaşılırsa detaylar Jira'ya yorum olarak yazılır ve task `DEVELOPMENT XL BLOCK` statüsüne alınır.
+- Task'ın `Depends on` bağımlılıkları kontrol edilir — bağımlı task'lar test edilmeden bu task test edilmez.
+- Blocker ile karşılaşılırsa detaylar Jira'ya yorum olarak yazılır ve task `TEST XL BLOCK` statüsüne alınır.
 
-## Geliştirme Detayları
+## Analiz
 
-### Planlama
+Test etmeye başlamadan önce şunlar okunur:
 
-- Hangi bileşenler oluşturulacak / güncellenecek belirlenir.
-- Hangi sayfalar etkilenecek belirlenir.
-- State yönetiminde değişiklik gerekip gerekmediği değerlendirilir.
-- API entegrasyon noktaları belirlenir.
+1. Task'ın Jira detayı: açıklama, acceptance criteria, PR linki ve yorumlar
+2. İlgili `project_context.md` dosyaları
+3. Varsa PR diff'i — neyin değiştiğini anlamak için
 
-### Uygulama
+## Test Senaryoları
 
-- Mevcut kod yapısına ve konvansiyonlara uygun şekilde geliştirilir.
-- Bileşenler oluşturulur / güncellenir.
-- Sayfalar güncellenir.
-- API entegrasyonu yapılır.
-- State yönetimi güncellenir (gerekliyse).
+Her acceptance criteria için en az bir test senaryosu yazılır. Format:
 
+```
+### Senaryo: <Senaryo Adı>
+**AC:** [Hangi acceptance criteria'ya karşılık geliyor]
+**Ön Koşul:** [Test öncesi gerekli durum]
+**Adımlar:**
+1. [Adım 1]
+2. [Adım 2]
+**Beklenen Sonuç:** [Ne olması gerekiyor]
+```
 
-> **Not:** Geliştirme aşamasında geliştirmeye engel olan bir durum ortaya çıkarsa `05-jira.md` kuralları doğrultusunda durumu detaylıca açıklayan bir Jira yorumu girilir ve task `DEVELOPMENT XL BLOCK` statüsüne alınır.
+Her testte şu senaryolar değerlendirilir:
+- **Happy path** — normal kullanım akışı
+- **Edge case** — sınır değerler, boş input, uzun string
+- **Hata durumu** — geçersiz veri, yetkisiz erişim, bağlantı hatası
+
+## Bileşene Göre Test Adımları
+
+### `[DB]` Database
+- DB task'ları için browser veya API testi yapılmaz.
+- Migration'ın başarıyla uygulandığını doğrulamak için PostgreSQL MCP ile ilgili tabloya SELECT sorgusu çekilir.
+- Kolon varlığı, veri tipi veya kısıt gibi yapısal değişiklikler `information_schema` üzerinden kontrol edilir.
+- Doğrulama tamamlandıktan sonra task direkt `TEST DONE` statüsüne alınır.
+
+### `[BE]` Backend
+- API endpoint'leri `$BE_BASE_URL` üzerinden test edilir
+- HTTP status kodları doğrulanır (200, 201, 400, 401, 403, 404, 500)
+- Response body yapısı AC ile karşılaştırılır
+- Auth/role kontrolleri doğrulanır
+
+### `[WEB]` Web Frontend
+- Web uygulaması `09-browser.md` kuralları doğrultusunda `$WEB_BASE_URL` üzerinden test edilir
+- Form validasyonları kontrol edilir
+- API entegrasyonu doğrulanır (doğru veri gösteriliyor mu?)
+- Hata mesajlarının kullanıcıya doğru gösterildiği kontrol edilir
+
+### `[MOB]` Mobile
+- Flutter web build'i `09-browser.md` kuralları doğrultusunda `$MOB_BASE_URL` üzerinden test edilir
+- Android ve iOS için ayrı test yapılmaz — tüm testler browser üzerinden yapılır
+- Temel kullanıcı akışları test edilir
+- Form validasyonları kontrol edilir
+- API entegrasyonu doğrulanır
+- Navigasyon akışı doğrulanır
+- Hata durumları ve kullanıcı geri bildirimleri kontrol edilir
+
+## Bulgu Raporlama
+
+### Test Geçti
+Tüm AC'ler karşılandıysa task `TEST DONE` statüsüne alınır ve kısa bir test özeti Jira'ya yorum olarak yazılır (kaç senaryo test edildi, sonuç ne).
+
+### Bug Bulundu
+Her bug için Jiraya aşağıdaki formatta yorum girilir:
+
+```
+[BUG]<Kısa açıklama>
+
+**Ortam:** [backend/web/mobile, versiyon/branch]
+**Önem:** [Critical | High | Medium | Low]
+
+**Repro Adımları:**
+1. [Adım 1]
+2. [Adım 2]
+
+**Beklenen Sonuç:** [Ne olması gerekiyordu]
+**Gerçekleşen Sonuç:** [Ne oldu]
+
+```
+
+Bug açıldıktan sonra task `DEVELOPMENT` statüsüne geri alınır ve unassign yapılır.

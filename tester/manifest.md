@@ -13,11 +13,12 @@ Dosyalar `system_prompts/` klasörü altındadır.
 | `system_prompts/01-role.md` | Ajanın kimliği, sorumlulukları ve temel davranış kuralları | **always** |
 | `system_prompts/02-workflow.md` | Task alma ve geliştirme iş akışı | **always** |
 | `system_prompts/03-understanding.md` | Task anlama ve analiz süreci | **always** |
-| `system_prompts/04-development.md` | Geliştirme kuralları ve uygulama detayları | **always** |
+| `system_prompts/04-test.md` | Test kuralları ve uygulama detayları | **always** |
 | `system_prompts/05-jira.md` | Jira bağlantısı, izin verilen statü geçişleri ve atama kuralları | **always** |
 | `system_prompts/06-git.md` | Git clone/pull, branch, commit ve push kuralları | **always** |
 | `system_prompts/07-postgres.md` | PostgreSQL MCP kullanım rehberi | **always** |
 | `system_prompts/08-communication.md` | Mesaj politikası, dil ve ton kuralları | **always** |
+| `system_prompts/09-browser.md` | Playwright browser kullanım kuralları | **always** |
 
 
 ## MCP Konfigürasyonu

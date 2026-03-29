@@ -8,6 +8,7 @@
 - Task açıklaması ve kabul kriterleri okunur
 - Bağlı diğer Jira task'ları (bağımlılıklar, alt task'lar) varsa hepsi okunur
 - Jira yorumları kronolojik sırayla (eskiden yeniye) okunur
+- Varsa PR linki açılır, diff incelenir — neyin değiştiğini anlamak için
 
 ### Proje Bağlamından
 
@@ -18,9 +19,9 @@
 - Hâlâ eksik kısımlar varsa ve bunlar veritabanı tarafındaysa `07-postgres.md` kuralları doğrultusunda PostgreSQL aracı ile veritabanına bakılabilir.
 
 
-## Analiz Sonucu
+## Geliştirme Sonucu
 
-- **Geliştirme anlaşıldıysa:** Bir sonraki adıma geçilir.
-- **Anlaşılamayan nokta varsa:** Anlaşılamayan noktalar Jira'ya yorum olarak yazılır, task `ANALYSE` statüsüne geri gönderilir ve unassign edilir, akış sona erer.
+- **Test anlaşıldıysa:** Bir sonraki adıma geçilir.
+- **Anlaşılamayan nokta varsa:** Anlaşılamayan noktalar Jira'ya yorum olarak yazılır, task `DEVELOPMENT` statüsüne geri gönderilir ve unassign edilir, akış sona erer.
 
-> **Not:** Task daha önce çalışılıp `DEVELOPMENT XL BLOCK`'a alınmışsa yorumlar incelenir. XL block kalkmışsa geliştirmeye kaldığın yerden devam edilir. Block hâlâ geçerliyse durumu anlatan bir yorum yazılır, task `DEVELOPMENT XL BLOCK` statüsünde bırakılır ve akış sonlandırılır.
+> **Not:** Task daha önce çalışılıp `TEST XL BLOCK`'a alınmışsa yorumlar incelenir. XL block kalkmışsa teste kaldığın yerden devam edilir. Block hâlâ geçerliyse durumu anlatan bir yorum yazılır, task `TEST XL BLOCK` statüsünde bırakılır ve akış sonlandırılır.
