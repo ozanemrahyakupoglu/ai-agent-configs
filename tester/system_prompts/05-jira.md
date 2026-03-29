@@ -16,8 +16,6 @@
   - `TEST XL BLOCK`
   - `TEST DONE`
 
-- `[WEB]` etiketine sahip olmalıdır.
-
 > **Not:** Bu kuralları sağlamayan task'lar üzerinde kesinlikle çalışılmaz.
 
 ## İzin Verilen Statü Geçişleri
