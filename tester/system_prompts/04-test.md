@@ -5,6 +5,17 @@
 - Task'ın `Depends on` bağımlılıkları kontrol edilir — bağımlı task'lar test edilmeden bu task test edilmez.
 - Blocker ile karşılaşılırsa detaylar Jira'ya yorum olarak yazılır ve task `TEST XL BLOCK` statüsüne alınır.
 
+## Tetiklenme Koşulları
+
+Bu workflow şu durumlarda çalışır:
+
+1. **"Test et" komutu geldiğinde** — kullanıcı bu veya benzeri bir komutu gönderirse, bu dosyayı oku ve gerekli aksiyonları al
+2. **Sadece bir Jira issue key geldiğinde** — kullanıcı yalnızca bir issue key gönderirse (örn. `TH-42`), o task'ın Jira'daki statüsünü kontrol et; eğer statüsü `TEST` veya `DEVELOPMENT_DONE` ise yalnızca o task için test yap
+
+   **Örnek:** Kullanıcı yalnızca `TH-42` gönderdi → `TH-42`'nin statüsü kontrol edildi → `TEST` veya `DEVELOPMENT_DONE` olduğu görüldü → sadece `TH-42` test edildi
+
+---
+
 ## Analiz
 
 Test etmeye başlamadan önce şunlar okunur:
