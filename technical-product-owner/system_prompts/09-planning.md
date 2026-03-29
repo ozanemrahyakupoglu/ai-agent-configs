@@ -12,6 +12,9 @@ READY'da 5'ten az task varsa, backlog'dan öncelik sırasına göre task'ları "
 Bu workflow şu durumlarda çalışır:
 
 1. **"Planlama yap" komutu geldiğinde** — kullanıcı bu veya benzeri bir komutu gönderirse, bu dosyayı oku ve gerekli aksiyonları al
+2. **Sadece bir Jira issue key geldiğinde** — kullanıcı yalnızca bir issue key gönderirse (örn. `TH-42`), o task'ın Jira'daki statüsünü kontrol et; eğer statüsü "TO DO" ise yalnızca o task için planlama yap (sadece o task'ı READY'ye taşı)
+
+   **Örnek:** Kullanıcı yalnızca `TH-42` gönderdi → `TH-42`'nin statüsü kontrol edildi → "TO DO" olduğu görüldü → sadece `TH-42` READY'ye taşındı
 
 ---
 
