@@ -7,10 +7,9 @@
 `06-git.md` dosyasındaki kurallar okunurak projeler clone/pull edilir.
 
 - MAIN_PROJECT (`$MAIN_PROJECT`) dizinindeki `project_context.md` okunur.
-- MAIN_PROJECT (`$MAIN_PROJECT`) dizinindeki tüm kodlar okunur.
 - İhtiyaç duyulması durumunda RELATED_PROJECTS (`$RELATED_PROJECTS`) dizinlerindeki `project_context.md` dosyaları da okunabilir.
-- Eksik kısımların kaldığını düşündüğünde, son çare olarak RELATED_PROJECTS (`$RELATED_PROJECTS`) dizinlerindeki tüm kodlar da okunabilir.
-- Hâlâ eksik kısımlar varsa ve bunlar veritabanı tarafındaysa `07-postgres.md` kuralları doğrultusunda PostgreSQL aracı ile veritabanına bakılabilir.
+
+> **Önemli:** Bilgi toplama yalnızca `project_context.md` dosyalarıyla sınırlıdır. Kaynak kod, konfigürasyon veya başka dosyalar okunmaz. Bilgi eksik kalıyorsa kullanıcıya doğrudan soru sorulur.
 
 ### Kullanıcıdan
 
